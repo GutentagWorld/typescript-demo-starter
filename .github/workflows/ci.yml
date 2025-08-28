@@ -1,33 +1,33 @@
 name: CI
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  merge_group:
+  on:
+    push:
+      branches: [main]
+    pull_request:
+      branches: [main]
+    merge_group:
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-      
-      - name: Install dependencies
-        run: npm ci
-        
-      - name: Install Playwright Browsers
-        run: npx playwright install
+  jobs:
+    test:
+      runs-on: ubuntu-latest
 
-      - name: Run build (includes type checking)
-        run: npm run build
-      
-      - name: Run tests
-        run: npm test
+      steps:
+        - uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: '18'
+            cache: 'npm'
+
+        - name: Install dependencies
+          run: npm ci
+
+        - name: Install Playwright Browsers
+          run: npx playwright install
+
+        - name: Run build (includes type checking)
+          run: npm run build
+
+        - name: Run tests
+          run: npm test
