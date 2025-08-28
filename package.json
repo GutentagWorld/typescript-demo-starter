@@ -1,0 +1,26 @@
+{
+  "name": "typescript-demo-starter",
+  "version": "1.0.0",
+  "description": "Minimal TypeScript single-page app for demos",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch & http-server dist -p 3000 -o",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "http-server": "^14.1.1",
+    "typescript": "^5.4.5"
+  },
+  "keywords": [
+    "typescript",
+    "demo",
+    "starter"
+  ],
+  "author": "",
+  "license": "MIT"
+}
